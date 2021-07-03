@@ -86,73 +86,86 @@ class _MyHomePageState extends State<MyHomePage> {
                             return InkWell(
                               onTap: () {
                                 ShowToast.showToast(context,
-                                    'Clicked on ${model.pageList[index].title}');
+                                    'Clicked on the${model.pageList[index].title}');
                               },
                               child: Container(
-                                child: ListTile(
-                                    leading: ClipRRect(
-                                        borderRadius: BorderRadius.all(
-                                            Radius.circular(20)),
-                                        child: model.pageList[index]
-                                                    .thumbnail !=
-                                                null
-                                            ? Container(
-                                                width: 40,
-                                                height: 40,
-                                                child: Image.network(model
+                                child: Column(
+                                  children: [
+                                    ListTile(
+                                        leading: ClipRRect(
+                                            borderRadius: BorderRadius.all(
+                                                Radius.circular(20)),
+                                            child: model.pageList[index]
+                                                        .thumbnail !=
+                                                    null
+                                                ? Container(
+                                                    width: 40,
+                                                    height: 40,
+                                                    child: Image.network(model
+                                                                .pageList[index]
+                                                                .thumbnail !=
+                                                            null
+                                                        ? model.pageList[index]
+                                                            .thumbnail.source
+                                                        : ''),
+                                                  )
+                                                : ClipRRect(
+                                                    borderRadius:
+                                                        BorderRadius.all(
+                                                            Radius.circular(
+                                                                20)),
+                                                    child: Container(
+                                                        color: Colors.red,
+                                                        width: 35,
+                                                        height: 35,
+                                                        child: Icon(
+                                                            Icons
+                                                                .account_circle,
+                                                            color: Colors
+                                                                .white)))),
+                                        title: Text(
+                                          model.pageList[index].title,
+                                          style: TextStyle(
+                                              fontFamily: 'OoredooHeavy',
+                                              fontSize: 18,
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.black),
+                                        ),
+                                        subtitle: Container(
+                                          margin: EdgeInsets.only(top: 4),
+                                          child: Column(
+                                            children: <Widget>[
+                                              Align(
+                                                alignment: Alignment.centerLeft,
+                                                child: Column(
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.start,
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.start,
+                                                  children: <Widget>[
+                                                    Text(
+                                                        model
                                                             .pageList[index]
-                                                            .thumbnail !=
-                                                        null
-                                                    ? model.pageList[index]
-                                                        .thumbnail.source
-                                                    : ''),
-                                              )
-                                            : ClipRRect(
-                                                borderRadius: BorderRadius.all(
-                                                    Radius.circular(20)),
-                                                child: Container(
-                                                    color: Colors.red,
-                                                    width: 35,
-                                                    height: 35,
-                                                    child: Icon(
-                                                        Icons.account_circle,
-                                                        color: Colors.white)))),
-                                    title: Text(
-                                      model.pageList[index].title,
-                                      style: TextStyle(
-                                          fontFamily: 'OoredooHeavy',
-                                          fontSize: 18,
-                                          fontWeight: FontWeight.bold,
-                                          color: Colors.black),
-                                    ),
-                                    subtitle: Container(
-                                      margin: EdgeInsets.only(top: 4),
-                                      child: Column(
-                                        children: <Widget>[
-                                          Align(
-                                            alignment: Alignment.centerLeft,
-                                            child: Column(
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.start,
-                                              children: <Widget>[
-                                                Text(
-                                                    model.pageList[index].terms
-                                                        .description[0],
-                                                    textAlign: TextAlign.left,
-                                                    style: TextStyle(
-                                                        fontFamily:
-                                                            'OoredooHeavy',
-                                                        fontSize: 13,
-                                                        color: Colors.black)),
-                                              ],
-                                            ),
+                                                            .terms
+                                                            .description[0],
+                                                        textAlign:
+                                                            TextAlign.left,
+                                                        style: TextStyle(
+                                                            fontFamily:
+                                                                'OoredooHeavy',
+                                                            fontSize: 13,
+                                                            color:
+                                                                Colors.black)),
+                                                  ],
+                                                ),
+                                              ),
+                                            ],
                                           ),
-                                        ],
-                                      ),
-                                    ),
-                                    trailing: Text('')),
+                                        ),
+                                        trailing: Text('')),
+                                    Divider()
+                                  ],
+                                ),
                               ),
                             );
                           },
