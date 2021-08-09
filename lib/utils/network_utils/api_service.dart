@@ -3,6 +3,8 @@ import 'dart:ui';
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:wikipedia_demo_app/utils/ui_utils/color_const.dart';
 import 'package:wikipedia_demo_app/utils/ui_utils/show_toast.dart';
 
 Future<Dio> getDio(BuildContext context, {isLoaderRequired = true}) async {
@@ -12,8 +14,12 @@ Future<Dio> getDio(BuildContext context, {isLoaderRequired = true}) async {
       builder: (context) => AbsorbPointer(
             child: BackdropFilter(
               filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
-              child: Container(
-                  child: SizedBox(child: new CircularProgressIndicator())),
+              child: Stack(
+                alignment: Alignment.center,
+                children: [
+                  SpinKitSquareCircle(color: kPINK_BUTTON_COLOR, size: 50.0),
+                ],
+              ),
             ),
           ));
   if (isLoaderRequired) {
