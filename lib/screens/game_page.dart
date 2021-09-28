@@ -25,32 +25,36 @@ class _GamePageState extends State<GamePage> {
     start = 0;
     end = 100;
     duration = Duration(milliseconds: 250);
+
     Timer.periodic(duration, bounce);
   }
 
   void setDirection() {
     if (marginTop == end) {
-      setState(() {
-        direction = 'up';
-      });
+      if (mounted)
+        setState(() {
+          direction = 'up';
+        });
     }
 
     if (marginTop == start) {
-      setState(() {
-        direction = 'down';
-      });
+      if (mounted)
+        setState(() {
+          direction = 'down';
+        });
     }
   }
 
   void bounce(Timer t) {
     setDirection();
-    setState(() {
-      if (direction == 'down') {
-        marginTop += increment;
-      } else {
-        marginTop -= increment;
-      }
-    });
+    if (mounted)
+      setState(() {
+        if (direction == 'down') {
+          marginTop += increment;
+        } else {
+          marginTop -= increment;
+        }
+      });
   }
 
   @override
@@ -71,10 +75,12 @@ class _GamePageState extends State<GamePage> {
             ),
           ),
         ),
-        /* Button(onPressed: () {
-          Timer.periodic(duration, bounce);
-        })*/
       ],
     );
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
   }
 }

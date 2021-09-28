@@ -7,6 +7,8 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:wikipedia_demo_app/utils/ui_utils/color_const.dart';
 import 'package:wikipedia_demo_app/utils/ui_utils/show_toast.dart';
 
+import 'config.dart';
+
 Future<Dio> getDio(BuildContext context, {isLoaderRequired = true}) async {
   var dio = new Dio();
 
@@ -30,7 +32,7 @@ Future<Dio> getDio(BuildContext context, {isLoaderRequired = true}) async {
   dio.options.connectTimeout = 100 * 1000;
   dio.options.receiveTimeout = 100 * 1000;
 
-  String baseUrl = 'https://yourteacher.herokuapp.com/';
+  String baseUrl = Config.apiUrl;
   dio.options.baseUrl = baseUrl;
 
   Map<String, dynamic> map = {

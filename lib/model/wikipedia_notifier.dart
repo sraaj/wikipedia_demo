@@ -9,6 +9,7 @@ enum ViewState { Idle, Busy }
 
 class WikiListNotifier extends ChangeNotifier {
   ViewState _state = ViewState.Idle;
+
   ViewState get state => _state;
 
   void setState(ViewState viewState) {

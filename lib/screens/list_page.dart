@@ -15,13 +15,12 @@ class _ListPageState extends State<ListPage> {
   Widget build(BuildContext context) {
     return BaseView<WikiListNotifier>(
         onModelReady: (model) async {
-      model.getWikiList(context);
-    },
-    instanceModel: WikiListNotifier(),
-    builder: (context, model, child) =>
-    model.state == ViewState.Busy
-    ? Container():
-    model.wikipediaListResponse.query.pages.length > 0
+          model.getWikiList(context);
+        },
+        instanceModel: WikiListNotifier(),
+        builder: (context, model, child) => model.state == ViewState.Busy
+            ? Container()
+            : model.wikipediaListResponse.query.pages.length > 0
                 ? Column(
                     children: [
                       Container(

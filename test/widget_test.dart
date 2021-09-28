@@ -7,8 +7,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:wikipedia_demo_app/screens/main.dart';
 
-import 'file:///C:/Users/shivaraj.yadagiri/AndroidStudioProjects/app-portal/app-portal/wikipedia_demo_app/lib/screens/main.dart';
+//import 'file:///C:/Users/shivaraj.yadagiri/AndroidStudioProjects/app-portal/app-portal/wikipedia_demo_app/lib/screens/main.dart';
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
