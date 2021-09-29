@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-Widget NoDataFoundWidget({
+Widget noDataFoundWidget({
   @required BuildContext context,
   String message = '',
   bool isPadding = true,

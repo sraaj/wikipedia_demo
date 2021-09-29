@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'color_const.dart';
 import 'cutom_tab_indicator.dart';
 
-class TabView extends StatefulWidget {
+class CustomTabView extends StatefulWidget {
   final List<Widget> indicators;
   final List<Widget> pages;
   final Color unSelectedLabelColor;
@@ -16,7 +16,7 @@ class TabView extends StatefulWidget {
   final Function getTabController;
   final int tabIndexPosition;
 
-  const TabView(
+  const CustomTabView(
       {@required this.indicators,
       @required this.pages,
       this.unSelectedLabelColor = kBLACK,
@@ -30,10 +30,11 @@ class TabView extends StatefulWidget {
       this.tabIndexPosition = 0});
 
   @override
-  _TabViewState createState() => _TabViewState();
+  _CustomTabViewState createState() => _CustomTabViewState();
 }
 
-class _TabViewState extends State<TabView> with SingleTickerProviderStateMixin {
+class _CustomTabViewState extends State<CustomTabView>
+    with SingleTickerProviderStateMixin {
   TabController tabController;
 
   @override

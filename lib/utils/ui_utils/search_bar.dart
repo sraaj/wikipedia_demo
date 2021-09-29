@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class SearchWidget extends StatelessWidget {
+class CustomSearchWidget extends StatelessWidget {
   final TextEditingController textEditingController;
   final String label;
   final TextInputType inputType;
@@ -23,7 +23,7 @@ class SearchWidget extends StatelessWidget {
   final bool suffixRequired;
   final Function onSubmit;
 
-  const SearchWidget(
+  const CustomSearchWidget(
       {Key key,
       this.textEditingController,
       this.label,

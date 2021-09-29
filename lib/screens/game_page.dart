@@ -15,6 +15,7 @@ class _GamePageState extends State<GamePage> {
   double start;
   double end;
   Duration duration;
+  Timer _timer;
 
   @override
   void initState() {
@@ -26,7 +27,7 @@ class _GamePageState extends State<GamePage> {
     end = 100;
     duration = Duration(milliseconds: 250);
 
-    Timer.periodic(duration, bounce);
+    _timer = new Timer.periodic(duration, bounce);
   }
 
   void setDirection() {
@@ -81,6 +82,7 @@ class _GamePageState extends State<GamePage> {
 
   @override
   void dispose() {
+    _timer.cancel();
     super.dispose();
   }
 }

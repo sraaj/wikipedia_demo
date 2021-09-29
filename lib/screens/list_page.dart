@@ -25,7 +25,7 @@ class _ListPageState extends State<ListPage> {
                     children: [
                       Container(
                         padding: EdgeInsets.all(8),
-                        child: SearchWidget(
+                        child: CustomSearchWidget(
                           onClear: () {
                             model.searchController.clear();
                             model.onSearch("", context);
@@ -135,7 +135,7 @@ class _ListPageState extends State<ListPage> {
                       ),
                     ],
                   )
-                : NoDataFoundWidget(
+                : noDataFoundWidget(
                     context: context,
                     message: 'No Data Found',
                   ));

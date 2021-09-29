@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:wikipedia_demo_app/model/wikipedia_notifier.dart';
+import 'package:wikipedia_demo_app/screens/widget_test_demo.dart';
 import 'package:wikipedia_demo_app/utils/network_utils/base_view.dart';
 import 'package:wikipedia_demo_app/utils/ui_utils/color_const.dart';
 import 'package:wikipedia_demo_app/utils/ui_utils/tab_view.dart';
@@ -12,11 +13,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Wiki List Demo',
       theme: ThemeData(
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(title: 'Wiki List Demo Home Page'),
     );
   }
 }
@@ -39,8 +40,8 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
         body: Container(
           padding: EdgeInsets.all(8),
-          child: TabView(
-              length: 2,
+          child: CustomTabView(
+              length: 3,
               backgroundColor: kWHITE,
               indicatorColor: kHEADER_COLOR,
               unSelectedLabelColor: kBUTTON_ASH_COLOR,
@@ -51,10 +52,14 @@ class _MyHomePageState extends State<MyHomePage> {
                 TabViewIndicator(
                   title: 'List Page',
                 ),
+                TabViewIndicator(
+                  title: 'Widget Test',
+                ),
               ],
               pages: [
                 GamePage(),
-                ListPage()
+                ListPage(),
+                WidgetTests()
               ]),
         ),
       ),

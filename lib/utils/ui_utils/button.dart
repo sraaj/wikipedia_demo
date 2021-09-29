@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'color_const.dart';
 import 'normal_text.dart';
 
-class Button extends StatelessWidget {
-  Button({
+class CustomButton extends StatelessWidget {
+  CustomButton({
     this.title = 'Sample',
     this.colour = kPINK_BUTTON_COLOR,
     @required this.onPressed,
